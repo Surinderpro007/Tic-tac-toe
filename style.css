@@ -1,0 +1,148 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container styling */
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Game board styling */
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2vmin;
+    background: linear-gradient(145deg, #1e90ff, #87cefa);
+    padding: 2vmin;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Box styling for Tic Tac Toe cells */
+.box {
+    height: 17vmin;
+    width: 17vmin;
+    border: none;
+    border-radius: 12px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    background: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for cells */
+.box:hover {
+    transform: scale(1.1);
+    background: #ffeb3b;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons (reset and new game) styling */
+#reset-btn,
+#new-game {
+    padding: 0.8em 2em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff5722, #e64a19);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+#reset-btn:hover,
+#new-game:hover {
+    background: linear-gradient(145deg, #e64a19, #d84315);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Message container styling */
+.msg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#msg {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+/* Page title styling */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e90ff;
+    margin: 1rem 0;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation for the message container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Hide message container by default */
+.hide {
+    display: none;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .box {
+        height: 15vmin;
+        width: 15vmin;
+        font-size: 2rem;
+    }
+
+    #reset-btn,
+    #new-game {
+        font-size: 1.2rem;
+        padding: 0.7em 1.5em;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
